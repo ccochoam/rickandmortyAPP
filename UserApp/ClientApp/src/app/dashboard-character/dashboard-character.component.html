@@ -1,0 +1,50 @@
+<div *ngIf="character && character.length > 0">
+    <h2>Personajes del episodio {{ episode }} -  {{name }} </h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Especie</th>
+                    <th>Tipo</th>
+                    <th style ="width: 7%">Género</th>
+                    <th>Origen</th>
+                    <th>Ubicación</th>
+                    <th style="width: 7%;">Imagen</th>
+                    <th>Episodios</th>
+                    <th>Fecha creación</th>
+                </tr>
+            </thead>
+            <tbody class="scrollable-body">
+                <tr *ngFor="let row of character">
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.status }}</td>
+                    <td>{{ row.species }}</td>
+                    <td>{{ row.type }}</td>
+                    <td style="width: 7%">{{ row.gender === 'unknown' ? '' : row.gender }}</td>
+                    <td title="{{ row.origin.name === 'unknown' ? '' : row.origin.name }}"><a [routerLink]="['/dashboardCharacter', row.name, row.origin]">{{ row.origin.name === 'unknown' ? '' : row.origin.name }}</a></td>
+                    <td title="{{ row.location.name === 'unknown' ? '' : row.location.name }}"><a [routerLink]="['/dashboardCharacter', row.name, row.location]">{{ row.location.name === 'unknown' ? '' : row.location.name }}</a></td>
+                    <td style ="width: 7%;"><img [src]="row.image" alt="Imagen" width="50" height="50"></td>
+                    <td><a [routerLink]="['/dashboard', row.name, row.episode.join(',')]">Ver episodios</a></td>
+                    <td>{{ row.created | date:'yyyy-MM-dd'  }}</td>
+                </tr>
+            </tbody>
+            <!-- <tfoot>
+                <tr>
+                    <td colspan="5" class="border-foot">
+                        <button (click)="nextPage()">
+                            Página anterior   <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button (click)="previousPage()">
+                            <i class="fas fa-chevron-left"></i>   Página anterior
+                        </button>
+                    </td>
+                </tr>
+            </tfoot> -->
+        </table>
+    </div>
+</div>
+<div *ngIf="!character || character.length === 0">
+    <p>No se encontraron datos.</p>
+</div>

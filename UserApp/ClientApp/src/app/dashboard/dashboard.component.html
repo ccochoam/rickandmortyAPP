@@ -1,0 +1,40 @@
+<div *ngIf="episodesResponse && episodesResponse.results && episodesResponse.results.length > 0">
+    <h2>Episodios de Rick & Morty</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Primera emisión</th>
+                    <th>Episodio</th>
+                    <th>Personajes</th>
+                    <th>Fecha creación</th>
+                </tr>
+            </thead>
+            <tbody class ="scrollable-body">
+                <tr *ngFor="let row of episodesResponse.results">
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.air_date }}</td>
+                    <td>{{ row.episode }}</td>
+                    <td><a [routerLink]="['/dashboardCharacter', row.name, row.episode, row.characters.join(',')]">Ver Personajes</a></td>
+                    <td>{{ row.created | date:'yyyy-MM-dd'  }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="border-foot">
+                        <button (click)="nextPage()">
+                            Página siguiente   <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button (click)="previousPage()">
+                            <i class="fas fa-chevron-left"></i>   Página anterior
+                        </button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<div *ngIf="!episodesResponse || !episodesResponse.results || episodesResponse.results.length === 0">
+    <p>No se encontraron datos.</p>
+</div>

@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-3">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="text-center mb-4">
+                <h1 class="mb-3">
+                    Iniciar sesión
+                </h1>
+            </div>
+            <div class="mb-3">
+                <input type="email" formControlName="email" class="form-control" id="txtEmail" placeholder="Correo electrónico">
+            </div>
+            <div class="mb-3">
+                <input type="password" formControlName="clave" class="form-control" id="txtclave" placeholder="Clave de usuario">
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-lg btn-primary mt-3" type="submit">
+                    Ingresar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

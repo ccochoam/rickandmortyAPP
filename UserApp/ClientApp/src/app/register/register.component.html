@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-3 register-form">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="title mb-4">
+                <h1 class="mb-3">
+                    Registro de usuario
+                </h1>
+            </div>
+            <div class="mb-3">
+                <input type="text" formControlName="nombre" class="form-control" id="txtName" placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+                <input type="text" formControlName="apellido" class="form-control" id="txtLastname" placeholder="Apellido">
+            </div>
+            <div class="mb-3">
+                <input type="number" formControlName="doctoIdent" class="form-control" id="txtNumberId" placeholder="Documento de identidad">
+            </div>
+            <div class="mb-3">
+                <input type="email" formControlName="email" class="form-control" id="txtEmail" placeholder="Correo electrónico">
+            </div>
+            <div class="mb-3">
+                <input type="password" formControlName="clave" class="form-control" id="txtclave" placeholder="Clave de usuario">
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-lg btn-primary mt-3" type="submit">
+                    Registrar usuario
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

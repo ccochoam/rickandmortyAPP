@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-floating {
+  margin-bottom: 15px;
+}
+
+  .form-floating label {
+    white-space: nowrap;
+  }
+
+  .form-floating input {
+    height: 2rem;
+  }
+
+/* Ajuste adicional para evitar que el placeholder se corte */
+.form-control::placeholder {
+  line-height: 2rem;
+}
+
+/* Añadido para mejorar la apariencia de los inputs */
+.form-floating input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}

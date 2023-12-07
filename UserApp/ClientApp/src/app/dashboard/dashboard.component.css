@@ -1,0 +1,54 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+  table-layout: fixed;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+tbody {
+  display: block;
+  height: 400px;
+  overflow: auto;
+  border: 1px solid #ddd;
+}
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+thead {
+  width: calc( 100% - 1em )
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  padding: 3px;
+  margin: 3px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float:right;
+}
+.border-foot{
+    border:none;
+}
+button:hover {
+  background-color: #1861ac;
+}
